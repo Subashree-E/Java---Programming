@@ -1,0 +1,12 @@
+public class Solution {
+    public static void main(String[] args) {
+    int n = 5; #declartion which means no of lines
+    for(int i=1;  i<=n; i++){ #outer loop
+        for(int j=1; j<=i; j++){ #inner loop
+            System.out.print("*"); #to print the right angle triangle
+        }
+        System.out.println();
+    }
+
+}
+}
