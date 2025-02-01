@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Solution {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in); 
+        System.out.println("Enter the total marks");{
+        int A = sc.nextInt();  #user input
+        float percentage = (A*100/500f);
+        System.out.println("percentage number:"); #wat to be displayed
+        System.out.print(percentage); 
+        System.out.println('%');
+
+    }
+
+
+    }
+    
+    }
+
