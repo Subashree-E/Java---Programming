@@ -1,0 +1,17 @@
+public class Solution {
+    public static void main(String[] args) {
+    float num1 = 9.001f;
+    float num2 = 9.002f;
+    if (num1==num2) { #comparing two floats
+       System.out.println("the numbers are equal");
+    }
+    else {
+       System.out.println("the numbers are not equal");}
+    }
+    public static boolean compareFloats(float num1, float num2) { #convert to integer
+        int scale1  = (int) (num1*1000);
+        int scale2  = (int) (num2*1000);
+        return scale1 == scale2;
+    }
+
+    }
