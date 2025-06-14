@@ -1,0 +1,22 @@
+E D C B A
+  D C B A
+    C B A
+      B A
+        A
+//
+
+class Main {
+    public static void main(String[] args) {
+        int n=5;
+        for(int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++){
+            System.out.print(" ");
+        }
+        char ch=(char)('E'-i+1);
+        for(char j=ch;j >='A';j--){
+                System.out.print(j + " ");
+            }
+                    System.out.println();
+    }
+}
+}
