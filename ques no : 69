@@ -1,0 +1,18 @@
+// add integers after 10 using array lisy
+import java.util.ArrayList;
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {10,20,10,30,14,40,60,10};
+        int search =10;
+        int count=1;
+        ArrayList <Integer> result = new ArrayList<>();
+        for(int i=0;i<arr.length;i++){
+            result.add(arr[i]);
+            if(arr[i]==search){
+                result.add(count);
+                count++;
+            }
+        }
+        System.out.println(result);
+    }
+}
