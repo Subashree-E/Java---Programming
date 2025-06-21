@@ -17,3 +17,20 @@ class Main {
         System.out.println(max);
     }
 }
+// minimum array
+class Main {
+    public static void main(String[] args) {
+        int[] arr = { 3, 1, 2, 4 };
+        int sum = 0;
+        for(int i=0;i<arr.length;i++){
+            int min =arr[i];
+        for(int j=i;j<arr.length;j++){
+            if(arr[j]<min){
+                min=arr[j];
+            }
+                sum=sum+min;
+            }
+        }    
+        System.out.println("mini subarray:" +sum);
+    }
+}
