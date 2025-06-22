@@ -1,0 +1,43 @@
+//deletion 
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      int arr[] = {10, 20, 30, 40};
+      int pos=2;
+      pos=pos-1;
+      int val=arr[pos];
+      for(int i=pos;i<arr.length-1;i++){
+        arr[i]=arr[i+1];
+            } 
+        for(int i=0;i<arr.length-1;i++)
+            System.out.print(arr[i] + " ");
+      
+}
+}
+
+//insertion
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      int arr[] = {10, 20, 30, 40};
+      int pos=3;
+      pos=pos-1;
+      int val=50;
+      int array[] = new int[arr.length+1];
+      for(int i=0;i<pos;i++){
+        array[i]=arr[i];
+            } 
+      array[pos]=val;      
+        for(int i=pos;i<arr.length;i++){
+          array[i+1]=arr[i];
+          
+        }
+        for(int i=0;i<array.length;i++){
+            System.out.print(array[i] + " ");
+      
+}
+}}
+
+
