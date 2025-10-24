@@ -1,0 +1,33 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+from datetime import datetime
+import csv
+website = "https://coinmarketcap.com/"
+options = Options()
+options.add_argument("--headless=new")
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+driver.get(website)
+
+rows = driver.find_elements(By.XPATH, "//table[contains(@class,'cmc-table')]/tbody/tr")
+
+with open("crypto_data.csv", "w", newline="", encoding="utf-8") as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(["Name", "Price", "24h Change", "Market Cap", "Timestamp"])
+    
+    for row in rows[:10]:
+        cols = row.find_elements(By.TAG_NAME, "td")
+        try:
+            name = cols[2].text
+            price = cols[3].text
+            change_24h = cols[4].text
+            market_cap = cols[7].text
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            writer.writerow([name, price, change_24h, market_cap, timestamp])
+        except IndexError:
+            continue
+
+driver.quit()
+print("✅ Data successfully saved to crypto_data.csv")
